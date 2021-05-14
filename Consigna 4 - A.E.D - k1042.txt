@@ -9,16 +9,20 @@ int main()
     cout << "Ingrese los coeficientes de su ecuacion lineal: 'a' 'b' y 'c' " << endl;
     cin >> a; cin >> b; cin >> c;
 
-    disc = (pow(b,2)-(4*a*c));
-
-    if( (pow(disc,0.5)) >= 0)
+    if(a>0)
     {
-        x1 = ( ( -b + (pow(disc,0.5)) ) / (2*a) ) ;
-        x2 = ( ( -b - (pow(disc,0.5)) ) / (2*a) ) ;
-        cout << "Las raices de esta ecuacion lineal son: " << x1 << " y " << x2 << endl;
+        disc = (pow(b,2)-(4*a*c));
+        if( (pow(disc,0.5)) >= 0)
+        {
+            x1 = ( ( -b + (pow(disc,0.5)) ) / (2*a) ) ;
+            x2 = ( ( -b - (pow(disc,0.5)) ) / (2*a) ) ;
+            cout << "Las raices de esta ecuacion lineal son: " << x1 << " y " << x2 << endl;
+        }
+        else
+        cout << "Esta ecuacion tiene raices complejas" << endl;
     }
     else
-    cout << "Esta ecuacion tiene raices complejas" << endl;
+        cout << "El coeficiente cuadratico debe ser distinto de cero" << endl;
 
     return 0;
 }
